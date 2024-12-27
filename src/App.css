@@ -1,0 +1,25 @@
+.App {
+	text-align: center;
+}
+html::-webkit-scrollbar {
+	width: 0;
+}
+.full {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	display: none;
+	right: 0;
+	background-color: aqua;
+}
+.movies-btn::after {
+	--bg-color: rgb(139, 255, 139);
+}
+.movies-btn::before {
+	--bg-color: rgb(157, 188, 255);
+}
+
+.hero-section {
+	margin-block-end: 15rem;
+}

@@ -1,0 +1,9 @@
+.card {
+	width: min(80%, 550px);
+	margin-inline: auto;
+	border-radius: 1rem;
+}
+
+.card > * {
+	border-radius: inherit;
+}

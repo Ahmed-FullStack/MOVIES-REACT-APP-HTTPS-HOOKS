@@ -1,0 +1,132 @@
+.loader {
+	width: 60%;
+	aspect-ratio: 1 / 1;
+	margin: 0 auto;
+	text-align: center;
+	display: inline-grid;
+	place-items: center;
+	position: relative;
+	transition: transform 500ms cubic-bezier(0.55, 0.55, 0, 1);
+}
+.loader:hover {
+	transform: scale(1.05);
+}
+.loader-text {
+	margin: 0;
+	font-size: clamp(100%, 1.2rem, 1.5rem);
+	animation: fade-in-out 500ms ease-out infinite alternate;
+}
+.loader-spinner {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	position: absolute;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 10px solid transparent;
+	mix-blend-mode: multiply;
+	pointer-events: none;
+	animation: loader var(--duration) var(--timing-function) infinite;
+}
+
+.loader-spinner-green {
+	border-left-color: hsl(150 100% 60%);
+	--duration: 1s;
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+}
+.loader-spinner-blue {
+	border-top-color: hsl(214, 100%, 60%);
+	--duration: 1.5s;
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+}
+.loader-spinner-aliceblue {
+	border-right-color: hsl(81, 100%, 60%);
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+	--duration: 2s;
+}
+.loader-spinner-red {
+	border-left-color: hsl(0, 100%, 75%);
+	--duration: 800ms;
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+}
+.loader-spinner-yellow {
+	border-top-color: hsl(64, 100%, 60%);
+	--duration: 1.4s;
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+}
+.loader-spinner-skyblue {
+	border-right-color: hsl(197, 100%, 60%);
+	--timing-function: cubic-bezier(0.55, 0.55, 0, 1);
+	--duration: 1.8s;
+}
+
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes fade-in-out {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0.2;
+	}
+}
+
+.transparent-bg-selection::selection {
+	background-color: transparent;
+}
+
+.movies-list {
+	--bg: hsl(235 100% 90%);
+	--bg-neurtral: hsl(235 100% 80%);
+	background-color: var(--bg);
+	/* margin: 1em auto 0; */
+	padding: 1.5em 0;
+	translate: 0% -20%;
+	opacity: 0;
+	pointer-events: none;
+	max-height: 500px;
+	overflow: hidden;
+	box-shadow: 0 3px 20px hsl(0 0% 0% / 0.2);
+}
+.movies-list:hover {
+	box-shadow: 0 3px 25px hsl(0 0% 0% / 0.3);
+}
+.movies-list::-webkit-scrollbar {
+	width: 0.9rem;
+	margin: 0.8rem;
+}
+.movies-list::-webkit-scrollbar-track {
+	background-color: var(--bg);
+}
+
+.movies-list::-webkit-scrollbar-thumb {
+	background-color: var(--bg-neurtral);
+	border: 0.3rem solid var(--bg);
+	border-radius: 100vw;
+}
+
+.show {
+	overflow-y: scroll;
+
+	pointer-events: auto;
+	opacity: 1;
+	translate: 0% 1rem;
+	transition: box-shadow 200ms ease-out,
+		translate 750ms cubic-bezier(0.85, 0, 0, 1), opacity 250ms ease;
+}
+
+.movies-list *::selection {
+	background-color: hsl(218 100% 50% / 0.1);
+}
+
+.err-text {
+	margin: 0;
+	font-size: 1.2rem;
+	animation: fade-in-out 500ms ease-out infinite alternate;
+}

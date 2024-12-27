@@ -1,0 +1,118 @@
+/* Css Reset File */
+
+/* Place These Fonts in Your html head Section */
+
+/* ====================
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+ ==================== */
+
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+	--reset-anchor-clr: #000;
+	--reset-input-outline: rgba(148, 193, 255, 0.87);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	user-select: none;
+	font-family: 'Google Sans', 'Poppins', Helvetica, sans-serif;
+}
+
+:where(body) {
+	margin: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p) {
+	margin-top: 0;
+	line-height: 1.3;
+	font-weight: 500;
+}
+
+:where(a) {
+	text-decoration: none;
+	color: var(--reset-anchor-clr);
+	display: inline-block;
+	font-size: 1.1rem;
+}
+
+:where(img) {
+	max-width: 100%;
+}
+
+:where(button) {
+	border: none;
+	font-size: 1rem;
+	padding: 0.75em 1em;
+	border-radius: 10px;
+}
+
+:where(ul) {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+:where(input) {
+	border: none;
+	outline: 1px solid var(--reset-input-outline);
+	font-size: 1.15rem;
+	padding: 0.5em 0.8em;
+	border-radius: 8px;
+}
+
+:where(input:focus-visible) {
+	outline: 1px solid var(--reset-input-outline);
+}
+
+:where(:focus) {
+	outline: none;
+}
+
+.line-animation {
+	position: relative;
+	display: inline-block;
+}
+.line-animation::after,
+.line-animation::before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	right: 0;
+	width: 100%;
+	height: 2.5px;
+	transform: scaleX(0);
+	transform-origin: right;
+}
+.line-animation::before {
+	background-color: var(--bg-color);
+	transition: transform 200ms ease-out 180ms;
+}
+.line-animation::after {
+	background-color: var(--bg-color);
+	transition: transform 200ms ease-out;
+}
+.line-animation:hover::after,
+.line-animation:hover::before,
+.line-animation:focus::after,
+.line-animation:focus::before {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+:is(.no-margin, #K) {
+	margin: 0;
+}

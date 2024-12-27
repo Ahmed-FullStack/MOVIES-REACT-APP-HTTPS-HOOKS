@@ -1,0 +1,42 @@
+.movie-form {
+	background-color: hsl(217 100% 90%);
+	margin: 2em auto;
+}
+.movie-form:hover {
+	box-shadow: 0 0.3em 1em hsl(0 0% 20% / 0.2);
+}
+.center-form {
+	padding: 2em 1em;
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2em;
+}
+
+.form-controls {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 1em;
+	position: relative;
+}
+.form-flex-controls {
+	flex-direction: row;
+	align-items: center;
+}
+.form-release-date,
+.form-title {
+	position: absolute;
+	right: 4em;
+}
+
+.form-opening-text {
+	width: 100%;
+	resize: none;
+}
+textarea {
+	border: none;
+	padding: 1em;
+	border-radius: 15px;
+}

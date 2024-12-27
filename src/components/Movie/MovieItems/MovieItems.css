@@ -1,0 +1,28 @@
+.movie-title {
+	font-size: 1.75rem;
+}
+
+.movies-item {
+	--duration: 750ms;
+	width: min(85%, 480px);
+	margin: 0 auto 2.5em;
+	animation: animate var(--duration) cubic-bezier(0.85, 0, 0, 1) forwards;
+}
+.movies-list .movies-item:nth-last-child() {
+	margin-bottom: 0;
+}
+.movie-release-date {
+	font-size: 1rem;
+}
+.movie-dialogue {
+	margin-bottom: 0;
+}
+
+@keyframes animate {
+	0% {
+		translate: 0% -120%;
+	}
+	100% {
+		translate: 0% 0%;
+	}
+}
